@@ -1,11 +1,11 @@
 import './App.css';
+import Driver from './components/pages/driver';
 
 function App() {
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-
-      </header>
+    <div className="container">
+      <Driver />
     </div>
   );
 }
