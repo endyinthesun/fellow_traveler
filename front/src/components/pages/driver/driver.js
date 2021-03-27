@@ -1,5 +1,6 @@
 import React, {Component}  from 'react';
 import {GoogleMap, LoadScript} from '@react-google-maps/api';
+import Sidebar from '../../sidebar'
 
 export default class Driver extends Component {
     state = {
@@ -18,6 +19,7 @@ export default class Driver extends Component {
           };
         return(
             <>
+            <Sidebar />
                 <LoadScript
                  googleMapsApiKey='AIzaSyBOczvH2n2uuDy6VClOiM1r4UoEKCV4F6M'
                 >
@@ -27,7 +29,7 @@ export default class Driver extends Component {
                     center={center}
                     zoom={15}
                     >
-
+                            
                     </GoogleMap>
                 </LoadScript>
             </>
