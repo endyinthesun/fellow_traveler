@@ -1,11 +1,13 @@
-import './App.css';
+import './App.scss';
 import Driver from './components/pages/driver';
+import Passenger from './components/pages/passenger';
 
 function App() {
  
   return (
     <div className="container">
-      <Driver />
+      {/* <Driver /> */}
+      <Passenger />
     </div>
   );
 }
