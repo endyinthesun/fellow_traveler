@@ -1,5 +1,5 @@
 import React, {Component}  from 'react';
-import {GoogleMap, LoadScript} from '@react-google-maps/api';
+import {GoogleMap, LoadScript, DirectionsService } from '@react-google-maps/api';
 import Sidebar from '../../sidebar'
 
 export default class Driver extends Component {
