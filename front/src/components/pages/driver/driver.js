@@ -1,6 +1,6 @@
 import React, {Component}  from 'react';
 import {GoogleMap, LoadScript, DirectionsService, DirectionsRenderer } from '@react-google-maps/api';
-import Sidebar from '../../sidebar'
+// import Sidebar from '../../sidebar'
 import './driver.scss';
 
 export default class Driver extends Component {
@@ -64,49 +64,41 @@ export default class Driver extends Component {
     }
 
     render() {
-<<<<<<< HEAD
-        const center = {
-            lat: 50.74112835606719, 
-            lng: 25.32148048596876
-        };
-        const options = {
-            zoom: 16,
-            minZoom: 13,
-            maxZoom: 18,
-            disableDefaultUI: true,
-            center: {
-                lat: 50.74112835606719, 
-                lng: 25.32148048596876
-            }
-        }
-        let driverList = [
-            {
-                name: 'Endy',
-                brandAuto: 'Lincoln'
-            },
-            {
-                name: 'Freyder',
-                brandAuto: 'Ford'
-            }
-        ]
-        return(
-            <>
-                <LoadScript
-                 googleMapsApiKey='AIzaSyBOczvH2n2uuDy6VClOiM1r4UoEKCV4F6M'
-                >
-                    <GoogleMap
-                        mapContainerClassName='containerMap'
-                        options={options}
-                    >
-                        <Sidebar 
-                            typeList='driver list'
-                            listData={driverList}
-                        />
-
-=======
         return(
             <div className='map'>
-                <div className='map-settings'>
+               
+                <div className='map-container'>
+                    <LoadScript
+                        googleMapsApiKey='AIzaSyBOczvH2n2uuDy6VClOiM1r4UoEKCV4F6M'
+                    >
+                    <GoogleMap
+                    mapContainerClassName='containerMap'
+                        // required
+                        id='direction-example'
+                        // required
+                        mapContainerStyle={{
+                            height: '400px',
+                            width: '100%'
+                        }}
+                        // required
+                        zoom={2}
+                        // required
+                        center={{
+                            lat: 0,
+                            lng: -180
+                        }}
+                        // optional
+                        onClick={this.onMapClick}
+                        // optional
+                        onLoad={map => {
+                            console.log('DirectionsRenderer onLoad map: ', map)
+                        }}
+                        // optional
+                        onUnmount={map => {
+                            console.log('DirectionsRenderer onUnmount map: ', map)
+                        }}
+                    >
+                         <div className='map-settings'>
                     <hr className='mt-0 mb-3' />
 
                     <div className='row'>
@@ -139,36 +131,6 @@ export default class Driver extends Component {
                     </button>
                 </div>
 
-                <div className='map-container'>
-                    <LoadScript
-                        googleMapsApiKey='AIzaSyBOczvH2n2uuDy6VClOiM1r4UoEKCV4F6M'
-                    >
-                    <GoogleMap
-                        // required
-                        id='direction-example'
-                        // required
-                        mapContainerStyle={{
-                            height: '400px',
-                            width: '100%'
-                        }}
-                        // required
-                        zoom={2}
-                        // required
-                        center={{
-                            lat: 0,
-                            lng: -180
-                        }}
-                        // optional
-                        onClick={this.onMapClick}
-                        // optional
-                        onLoad={map => {
-                            console.log('DirectionsRenderer onLoad map: ', map)
-                        }}
-                        // optional
-                        onUnmount={map => {
-                            console.log('DirectionsRenderer onUnmount map: ', map)
-                        }}
-                    >
                         {
                             (
                                 this.state.destination !== '' &&
@@ -213,7 +175,6 @@ export default class Driver extends Component {
                                 />
                             )
                         }
->>>>>>> refs/remotes/origin/main
                     </GoogleMap>
                     </LoadScript>
                 </div>

@@ -65,7 +65,8 @@ export default class Passenger extends Component {
                 >
                     <img src={src} alt="name" className="item_img"/>
                     <div className="item_info">
-                        <span className="item_info_name">{name}</span>
+                        <span className="item_info_name">{name}
+                        </span>
                         <span className="item_info_brand">{brandAuto}</span>
                     </div>
                 </div>

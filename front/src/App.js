@@ -6,8 +6,8 @@ function App() {
  
   return (
     <div className="container">
-      {/* <Driver /> */}
-      <Passenger />
+      <Driver />
+      {/* <Passenger /> */}
     </div>
   );
 }
