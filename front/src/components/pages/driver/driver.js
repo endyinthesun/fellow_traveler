@@ -116,30 +116,24 @@ export default class Driver extends Component {
                     <div className='row'>
                         <div className='col-md-6 col-lg-4'>
                             <div className='form-group'>
-                                <label htmlFor='ORIGIN'>Origin</label>
+                                <label htmlFor='ORIGIN' className='title'>Початок</label>
                                 <br />
-                                <input placeholder={'From'} id='ORIGIN' className='form-control' type='text' ref={this.getOrigin} />
+                                <input placeholder={'Точка А'} id='ORIGIN' className='form-control' type='text' ref={this.getOrigin} />
                             </div>
                         </div>
 
                         <div className='col-md-6 col-lg-4'>
                             <div className='form-group'>
-                                <label htmlFor='DESTINATION'>Destination</label>
+                                <label htmlFor='DESTINATION' className='title'>Кінець</label>
                                 <br />
-                                <input id='DESTINATION' placeholder={'Where'} className='form-control' type='text' ref={this.getDestination} />
+                                <input id='DESTINATION' placeholder={'Точка Б'} className='form-control' type='text' ref={this.getDestination} />
                             </div>
                         </div>
-                        <div className='col-md-6 col-lg-4'>
-                            <div className='form-group'>
-                                <label htmlFor='choose_map'>Choose on map</label>
-                                <br />
-                                <input id='choose_map'  className='form-control' type='checkbox'/>
-                            </div>
-                        </div>
+                        
                     </div>
 
                     <button className='btn btn-primary' type='button' onClick={this.onClick}>
-                        Build Route
+                        Побудувати маршрут
                     </button>
                 </div>
 

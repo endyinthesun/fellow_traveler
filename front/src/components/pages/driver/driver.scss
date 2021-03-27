@@ -12,53 +12,45 @@
                 z-index: 0;
             }
             .map-settings {
-                padding: 5px;
+                padding: 20px;
                 z-index: 5;
                 width: 300px;
                 background-color: #fff;
                 margin: 12px;
                 border-radius: 15px;
-                &_title {
-                    font-family: Roboto;
-                    font-style: normal;
-                    margin-left: 20px;
-                    font-weight: bold;
-                    font-size: 18px;
-                    line-height: 21px;
-                    text-transform: uppercase;
-                    color: #454545
-                }
-                &_list {
-                    box-shadow: inset 0px -4px 4px rgba(201, 194, 194, 0.25), inset 0px 4px 4px rgba(204, 199, 199, 0.25);
-                    border-radius: 13px;
-                    margin: 20px 2px 2px 2px;
-                    padding: 13px 7px;
-                    height: calc(100% - 90px);
-                    .item {
-                        display: flex;
-                        margin-bottom: 7px;
-                        padding: 20px 16px;
-                        color: #1DB9EA;
-                        background: rgba(29, 185, 234, 0.11);
-                        border-radius: 13px;
-                        &_img {
-                            width: 50px;
-                            height: 50px;
-                        }
-                        &_info {
-                            margin-left: 20px;
-                            &_name {
-                                display: block;
-                                font-weight: 500;
-                            }
-                            &_brand {
-                                display: block;
-                                color: tan;
-                                font-size: 13px;
-                                margin-top: 5px;
-                            }
-                        }
+                padding-top: 50px;
+                
+                .form-group {
+                    margin-top: 10px;
+                    .title {
+                        font-family: Roboto;
+                        font-style: normal;
+                        font-size: 15px;
+                        // text-transform: uppercase;
+                        font-weight: 500;
                     }
+                    .form-control {
+                        margin-top: 5px;
+                        width: 80%;
+                        border-radius: 5px;
+                        padding: 4px;
+                        font-size: 14px;
+                        border: 1px solid black;
+                    }
+                  
+                }
+                .btn {
+                    cursor: pointer;
+                    border: none;
+                    margin-top: 24px;
+                    background: rgba(29, 185, 234, 1);
+                    color: white;
+                    border-radius: 5px;
+                    padding: 10px 20px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 15px;
                 }
             }
         }
