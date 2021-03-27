@@ -64,6 +64,16 @@ export default class Driver extends Component {
     }
 
     render() {
+        const options = {
+            zoom: 16,
+            minZoom: 13,
+            maxZoom: 18,
+            disableDefaultUI: true,
+            center: {
+                lat: 50.74112835606719, 
+                lng: 25.32148048596876
+            }
+        }
         return(
             <div className='map'>
                
@@ -72,14 +82,16 @@ export default class Driver extends Component {
                         googleMapsApiKey='AIzaSyBOczvH2n2uuDy6VClOiM1r4UoEKCV4F6M'
                     >
                     <GoogleMap
+                        options={options}
+
                     mapContainerClassName='containerMap'
                         // required
                         id='direction-example'
-                        // required
-                        mapContainerStyle={{
-                            height: '400px',
-                            width: '100%'
-                        }}
+                        // // required
+                        // mapContainerStyle={{
+                        //     height: '400px',
+                        //     width: '100%'
+                        // }}
                         // required
                         zoom={2}
                         // required
