@@ -7,8 +7,11 @@ export default class Driver extends Component {
             response: null,
             travelMode: 'DRIVING',
             origin: '',
-            destination: ''
+            destination: '',
+            checkbox_state: ''
     }
+
+    position = { lat: 33.772, lng: -117.214 }
 
     directionsCallback = (response) => {
         console.log(response)
@@ -24,6 +27,20 @@ export default class Driver extends Component {
                 console.log('response: ', response)
             }
         }
+    }
+
+
+    onMapClick = (...args)  => {
+
+        if (this.state.destination === '')
+        {
+            this.setState(() => ({destination: args[0].latLng}))
+        }
+        else
+        {
+            this.setState(() => ({origin: args[0].latLng}))
+        }
+
     }
 
     getOrigin = (ref) => {
@@ -46,14 +63,6 @@ export default class Driver extends Component {
     }
 
     render() {
-        const center = {
-            lat: 50.74112835606719,
-            lng: 25.32148048596876
-        };
-        const containerStyle = {
-            width: '400px',
-            height: '400px'
-        };
         return(
             <div className='map'>
                 <div className='map-settings'>
@@ -64,7 +73,7 @@ export default class Driver extends Component {
                             <div className='form-group'>
                                 <label htmlFor='ORIGIN'>Origin</label>
                                 <br />
-                                <input id='ORIGIN' className='form-control' type='text' ref={this.getOrigin} />
+                                <input placeholder={'From'} id='ORIGIN' className='form-control' type='text' ref={this.getOrigin} />
                             </div>
                         </div>
 
@@ -72,7 +81,14 @@ export default class Driver extends Component {
                             <div className='form-group'>
                                 <label htmlFor='DESTINATION'>Destination</label>
                                 <br />
-                                <input id='DESTINATION' className='form-control' type='text' ref={this.getDestination} />
+                                <input id='DESTINATION' placeholder={'Where'} className='form-control' type='text' ref={this.getDestination} />
+                            </div>
+                        </div>
+                        <div className='col-md-6 col-lg-4'>
+                            <div className='form-group'>
+                                <label htmlFor='choose_map'>Choose on map</label>
+                                <br />
+                                <input id='choose_map'  className='form-control' type='checkbox'/>
                             </div>
                         </div>
                     </div>
